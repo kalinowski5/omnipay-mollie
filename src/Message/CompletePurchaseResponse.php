@@ -9,6 +9,6 @@ class CompletePurchaseResponse extends FetchTransactionResponse
      */
     public function isSuccessful()
     {
-        return parent::isSuccessful() && $this->isPaid();
+        return parent::isSuccessful() && ($this->isPaid() || $this->isPaidOut());
     }
 }
